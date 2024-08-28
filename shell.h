@@ -12,22 +12,22 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* for read/write buffers */
+/* function to be use in reading/writing buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-/* for command chaining */
+/* function to be used for command chaining */
 #define CMD_NORM	0
 #define CMD_OR		1
 #define CMD_AND		2
 #define CMD_CHAIN	3
 
-/* for convert_number() */
+/* function to be used for convert_number() */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
-/* 1 if using system getline() */
+/* Always use 1 if using system getline() */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
@@ -38,8 +38,8 @@ extern char **environ;
 
 
 /**
- * struct liststr - singly linked list
- * @num: the number field
+ * struct liststr - function for singly linked list
+ * @num: the number field of the element
  * @str: a string
  * @next: points to the next node
  */
@@ -51,7 +51,8 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - contains pseudo-arguements to pass into a function,
+ *struct passinfo - A function that contains pseudo-arguements
+ *                  to pass into a function,
  *		allowing uniform prototype for function pointer struct
  *@arg: a string generated from getline containing arguements
  *@argv: an array of strings generated from arg
@@ -100,7 +101,8 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- *struct builtin - contains a builtin string and related function
+ *struct builtin - A function that contains a builtin
+ *                 string and related function
  *@type: the builtin command flag
  *@func: the function
  */
